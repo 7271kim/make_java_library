@@ -61,9 +61,11 @@ public class StringToEveryThing {
      * @return Double
      */
     public static Double getStringToDouble( String number ) {
-        if ( StringUtils.isBlank(number) ) return 0.0;
+        number = number.replaceAll("[^\\.\\+\\-0-9]", "");
+        if ( StringUtils.isBlank(number) || number.equals("0")|| number.equals("+")|| number.equals("-")|| number.equals(".")) return 0.0;
+        BigDecimal big =  new BigDecimal(number);
+        Double todayPrice = big.doubleValue();
         
-        Double todayPrice = new BigDecimal(number.replaceAll(",", "").replaceAll(" ", "").replace("%","")).doubleValue();
         return todayPrice;
         
     }
