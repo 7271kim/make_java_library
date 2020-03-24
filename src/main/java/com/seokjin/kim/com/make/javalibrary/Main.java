@@ -17,7 +17,7 @@ import com.seokjin.kim.library.JsoupCustom;
 public class Main {
     public static void main( String[] args ) {
         
-        Document test = JsoupCustom.getGetDocumentFromURL("https://honbabzone.com/");
+        
         /*GetProperties properties = new GetProperties("config/secure.properties");
         Map<String, String> params = new HashMap<>();
         String crtfc_key    = properties.getValue("API_KEY_DART");
