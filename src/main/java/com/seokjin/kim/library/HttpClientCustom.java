@@ -8,6 +8,7 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
@@ -109,13 +110,14 @@ public class HttpClientCustom {
     }
     
     /**
-     * url과 param을 가지고 한글 인코딩된 url 리턴
+     * url과 param을 가지고 한글 인코딩된 url 리턴 
      * @param url
      * @param params
      * @return String
      */
     public static String getParamToString( String url, Map<String, String> params ) {
         String resultUrl = "";
+        
         try {
             URIBuilder uri = new URIBuilder(url);
             for (String key : params.keySet()) {
