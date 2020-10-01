@@ -17,6 +17,29 @@ public class MathAll {
         return result;
     }
     
+    public static Set<String> getCombination( String[] n, int r ){
+        Set<String> result = new LinkedHashSet<>();
+        checkArrayCombination( n, r, 0, result, "", 0);
+        return result;
+    }
+    
+    /*
+     * 종료 조건 : r개 뽑앗을 때,
+     * return : void
+     */
+    private static void checkArrayCombination( String[] n, int r, int checking, Set<String> result, String next, int startIndex ) {
+        if( checking == r ) {
+            result.add(next);
+            return;
+        }
+        for( int index = startIndex; index < n.length; index++ ) {
+            String temp = next;
+            temp += " " + n[index];
+            temp = temp.trim();
+            checkArrayCombination(n, r, checking+1, result, temp, index+1);
+        }
+    }
+
     /*
      * 종료 조건 : r개 뽑앗을 때,
      * return : void

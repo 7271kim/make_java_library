@@ -20,6 +20,8 @@ public class Main {
     public static void main( String[] args ) {
         
         Set<String> temp = MathAll.getCombination(5, 2);
+        Set<String> temp2 = MathAll.getCombination(new String[]{"1","2","5"}, 2);
+        System.out.println(temp2);
         /*GetProperties properties = new GetProperties("config/secure.properties");
         Map<String, String> params = new HashMap<>();
         String crtfc_key    = properties.getVlue("API_KEY_DART");
