@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.http.client.utils.URIBuilder;
 import org.jsoup.nodes.Document;
@@ -13,14 +14,15 @@ import org.jsoup.nodes.Document;
 import com.seokjin.kim.library.GetProperties;
 import com.seokjin.kim.library.HttpClientCustom;
 import com.seokjin.kim.library.JsoupCustom;
+import com.seokjin.kim.library.MathAll;
 
 public class Main {
     public static void main( String[] args ) {
         
-        
+        List<String> temp = MathAll.getCombination(5, 2);
         /*GetProperties properties = new GetProperties("config/secure.properties");
         Map<String, String> params = new HashMap<>();
-        String crtfc_key    = properties.getValue("API_KEY_DART");
+        String crtfc_key    = properties.getVlue("API_KEY_DART");
         String corp_code    = properties.getValue("삼성전자");
         params.put("bgn_de", "20180117");
         params.put("end_de", "20190117");
