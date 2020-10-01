@@ -19,7 +19,7 @@ import com.seokjin.kim.library.MathAll;
 public class Main {
     public static void main( String[] args ) {
         
-        List<String> temp = MathAll.getCombination(5, 2);
+        Set<String> temp = MathAll.getCombination(5, 2);
         /*GetProperties properties = new GetProperties("config/secure.properties");
         Map<String, String> params = new HashMap<>();
         String crtfc_key    = properties.getVlue("API_KEY_DART");
