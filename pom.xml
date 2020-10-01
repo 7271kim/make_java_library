@@ -37,28 +37,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            
-            <!-- JAVA 소스 여려개 일 시 설정 -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>add-source-dir</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/main/java</source>
-                                <!-- <source>others/src</source> -->
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- 의존성 jar 하나로 패키징 시 -->
              <plugin>
                  <artifactId>maven-assembly-plugin</artifactId>
@@ -66,6 +44,7 @@
                  <configuration>
                      <archive>
                          <manifest>
+                            <mainClass>com.seokjin.kim.com.make.javalibrary.Main</mainClass>
                          </manifest>
                      </archive>
                      <descriptorRefs>
@@ -74,9 +53,10 @@
                      <!-- jar-with-dependencies 붙이기 싫다면 세팅 -->
                      <appendAssemblyId>false</appendAssemblyId>
                      <finalName>${project.name}-single-App</finalName>
-                      <descriptors>
+                     <!-- descriptors 쓰는 순간부터 내 java 파일이 class파일로 변하지 않고 있음. 해당 확인 필요 -->
+                     <!-- <descriptors>
                         <descriptor>src/main/resource/assemblyFilterassembly.xml</descriptor>
-                      </descriptors>
+                     </descriptors> -->
                  </configuration>
                  <executions>
                   <execution>
@@ -90,9 +70,7 @@
              </plugin>
         </plugins>
     </build>
-    
     <dependencies>
-    
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -129,6 +107,5 @@
             <artifactId>jsoup</artifactId>
             <version>1.13.1</version>
         </dependency>
-                
     </dependencies>
 </project>
